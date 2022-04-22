@@ -1,0 +1,2 @@
+n="publication"
+print(n)
