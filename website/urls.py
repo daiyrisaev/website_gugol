@@ -25,16 +25,17 @@ from apps.gugols import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('publication/',BeautyIndexView.as_view(),name='publications_list-url'),
-    path('public/',BeautyListView.as_view(),name='publication_list-url'),
-    path('publications/<int:pk>/',BeautyDetailView.as_view(),name='publication_detail-url'),
-    path('about/',BeautyAboutView.as_view(),name='about-url'),
-    path('service/',BeautyServiceView.as_view(),name='service-url'),
-    path('work/',BeautyWorkView.as_view(),name='work-url'),
-    path('contact/',BeautyContactView.as_view(),name='contact-url'),
-    path('email/',send_to_admin,name='email-url'),
-    path('booking/',views.create_booking_tour,name='booking-url'),
+    path('publication/',BeautyIndexView.as_view(), name='publications_list-url'),
+    path('public/',BeautyListView.as_view(), name='publication_list-url'),
+    path('publications/<int:pk>/',BeautyDetailView.as_view(), name='publication_detail-url'),
+    path('about/',BeautyAboutView.as_view(), name='about-url'),
+    path('service/',BeautyServiceView.as_view(), name='service-url'),
+    path('work/',BeautyWorkView.as_view(), name='work-url'),
+    path('contact/',BeautyContactView.as_view(), name='contact-url'),
+    path('email/',send_to_admin, name='email-url'),
+    path('booking/',views.create_booking_tour, name='booking-url'),
     # path('blog/<int:pk>/comment-add/',add_comment_publication, name='add-publication-comment-url'),
+
 
 
 ]

@@ -102,6 +102,7 @@ def send_to_admin(request):
                 )
             return HttpResponse(content='данные успешно отпрвлены.')
         else:
+
             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
 
 #
