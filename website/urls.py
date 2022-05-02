@@ -21,6 +21,8 @@ from django.urls import path
 from apps.gugols.views import BeautyIndexView, BeautyListView, BeautyDetailView, BeautyAboutView, BeautyServiceView, \
     BeautyContactView, BeautyWorkView, send_to_admin
 
+from apps.gugols import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('publication/',BeautyIndexView.as_view(),name='publications_list-url'),
@@ -30,7 +32,9 @@ urlpatterns = [
     path('service/',BeautyServiceView.as_view(),name='service-url'),
     path('work/',BeautyWorkView.as_view(),name='work-url'),
     path('contact/',BeautyContactView.as_view(),name='contact-url'),
-    path('email/',send_to_admin,name='email-url')
+    path('email/',send_to_admin,name='email-url'),
+    path('booking/',views.create_booking_tour,name='booking-url'),
+    # path('blog/<int:pk>/comment-add/',add_comment_publication, name='add-publication-comment-url'),
 
 
 ]

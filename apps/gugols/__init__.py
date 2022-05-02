@@ -1,2 +1,0 @@
-n="publication"
-print(n)

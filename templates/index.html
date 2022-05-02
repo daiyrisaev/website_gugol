@@ -1,93 +1,127 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-    <section class="ftco-section">
+<!--    <section class="ftco-section">-->
+<!--    	<div class="container">-->
+<!--	     <div class="row justify-content-center mb-5 pb-3">-->
+<!--          <div class="col-md-7 heading-section ftco-animate text-center">-->
+<!--            <h2 class="mb-4">Салон красоты</h2>-->
+<!--            <p>Ваша красота в наших руках.</p>-->
+<!--			  </div>-->
+<!--			 </div>-->
+
+<!--       <div class="row d-flex">-->
+<!--            {% for item in publications %}-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="{% url 'publication_detail-url' item.id %}" class="block-20" style="background-image: url({{ item.image.url }});">-->
+<!--              </a>-->
+<!--              <div class="text py-4 d-block">-->
+<!--              	<div class="meta">-->
+<!--                  <div><a href="#">{{ item.created_at }}</a></div>-->
+<!--                  <div><a href="#"></a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mt-2"><a href="{% url 'publication_detail-url' item.id %}">{{ item.name }}</a></h3>-->
+<!--                <p>{{ item.description }}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--            {% endfor %}-->
+
+<!--            <div class="media d-block text-center block-6 services">-->
+<!--              <div class="icon d-flex mb-3"><span class="flaticon-curl"></span></div>-->
+<!--              <div class="media-body">-->
+
+<!--              </div>-->
+<!--            </div>    -->
+<!--          </div>-->
+<!--        </div>-->
+<!--    	</div>-->
+<!--    </section>-->
+
+ <section class="ftco-section">
     	<div class="container">
-    		<div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex mb-3"><span class="flaticon-facial-treatment"></span></div>
-              <div class="media-body">
-                <h3 class="heading">Skin &amp; Beauty Care</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex mb-3"><span class="flaticon-cosmetics"></span></div>
-              <div class="media-body">
-                <h3 class="heading">Makeup Pro</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex mb-3"><span class="flaticon-curl"></span></div>
-              <div class="media-body">
-                <h3 class="heading">Hair Style</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>    
-          </div>
-        </div>
-    	</div>
+    		<div class="row d-flex">
+    			<div class="col-md-6 d-flex ftco-animate">
+				<img src="{% static 'images/beuty.jpg' %}" alt="Smiley face" height="800" width="800">
+
+<!--    				<div class="img img-about align-self-stretch" style="background-image: url({% static 'images/naryn.jpg '%});  height: 500px; width: 500px;"></div>-->
+    			</div>
+    			<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">Добро пожаловать в салон Gugol</h2>
+    				<h5>Самый лучший салон красоты в городе Нарын,все удобста для клиентов.
+						Дорогие гости нашего торгового комплекса! Вас приветствует салон красоты «Гугол».
+						Наши мастера предлагают полный спектр услуг для здоровья и красоты Ваших волос: причёски и укладки, биозавивки и кератиновое выпрямление волос, эксклюзивная процедура бустап и окраска волос с применением продукции премиум-класса Пол Митчелл. В нашем салоне ведёт приём врач-косметолог. Предлагаем Вам различные омолаживающие процедуры для лица и тела, а также перманентный макияж. К Вашему вниманию услуги визажиста, стилиста, мастеров маникюра и педикюра, прессотерапия.
+						Посетив наш салон, Вы сможете получить бесплатные консультации по применению косметических средств по уходу за собой в домашних условиях. Предлагаем Вам посетить!</h5>
+
+    	      </div>
+				</div>
+			</div>
     </section>
 
     <section class="ftco-section bg-light">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Our Beauty Experts</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h2 class="mb-4">Наши красивые экперты</h2>
+            <p>Лучшие в городе Нарын</p>
           </div>
         </div>
         <div class="row">
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
+      				<div class="img mb-4" style="background-image: url('/static/images/nails.jpg');"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Mellisa Smith</a></h3>
-      					<span class="position">Stylist</span>
+      					<h3><a href="teacher-single.html">Дарья</a></h3>
+      					<span class="position">
+
+							Мастер маникюра и педикюра</span>
       					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<p>....все должно быть идеально....в ситуациях, в быту, в людях! Во всем, что меня окружает. Я перфекционист до мозга костей! Это то, что помогает мне делать работу не просто хорошо, а на высшем уровне. Никогда не боюсь сложных задач, наоборот, они подстегивают к лучшему результату. Именно это способствовало желанию освоить подологию...Без ложной скромности скажу, что собрала в себе множество качеств и характеристик, которые позволяют мне быть лучшей в своём деле. Говорят, лучше один раз попробовать, чем сто раз услышать! Приходите к нам...</p>
+
 	        			</div>
       				</div>
         		</div>
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url({% static 'images/person_2.jpg' %});"></div>
+      				<div class="img mb-4" style="background-image: url({% static 'images/admin.jpg' %});"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Marie Mush</a></h3>
-      					<span class="position">Fashionist</span>
+      					<h3><a href="teacher-single.html">Уулкан</a></h3>
+      					<span class="position">Администратор</span>
       					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	        				<p>«...Работа администратора очень ответственная! Все мы знаем, как важно именно первое
+впечатление - это и есть моя задача - наладить контакт, настроить наших посетителей на
+позитивный лад и передать в руки наших лучших мастеров... К каким только уловкам не
+приходится прибегать, от милой улыбки и вкусного кофе, до... пожалуй, не буду раскрывать свои секреты! Моя работа напрямую связана с хобби - фотографией. Каждый день я вижу множество новых лиц, которые рассматриваю как сквозь призму объектива, примеряю различные образы, которые очень хочется запечатлеть...»</p>
 	        			</div>
       				</div>
         		</div>
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url({% static 'images/person_3.jpg' %});"></div>
+      				<div class="img mb-4" style="background-image: url({% static 'images/ula.jpg' %});"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Ana Jacobson</a></h3>
-      					<span class="position">Makeup Stylist</span>
+      					<h3><a href="teacher-single.html">Юлия</a></h3>
+      					<span class="position">Менеджер</span>
       					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	        				<p>Как театр начинается с вешалки, так салон красоты начинается с Ресепшн. Администратор - это связь целой системы с миром. На работу как на праздник - придерживаюсь именно такой точки зрения, подобное отношение к работе, позволяет нам оставаться лучшими на протяжении многих лет! Открывая дверь нашего салона, переступив порог... Вы попадаете в атмосферу добра и заботы! «Гость»- для меня это не просто слово! Каждый гость имеет колоссальное значение, только так можно выполнить качественно свои обязанности.
+Меня всегда переполняет чувство гордости и радости за коллег, когда я вижу счастливые и
+довольные лица клиентов, слышу благодарные отзывы! Мы не просто оправдываем ожидания наших посетителей - мы их превосходим!</p>
 	        			</div>
       				</div>
         		</div>
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url({% static 'images/person_4.jpg' %});"></div>
+      				<div class="img mb-4" style="background-image: url({% static 'images/message.jpg' %});"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Ivan Dorchsner</a></h3>
-      					<span class="position">Nail Specialist</span>
+      					<h3><a href="teacher-single.html">Марина</a></h3>
+      					<span class="position">Массажист</span>
       					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	        				<p>Массажист или мастер по телу... Представляете ли Вы сколько всего должны содержать
+эти слова, чтобы ожить в профессию! Доброжелательность, уравновешенность, трудолюбие, терпеливость, выносливость, тактичность, подкованность в психологии, знание техник массажа, любовь к своему делу... перечислять можно без остановки, и поверьте список займёт не один лист! Массаж - это не просто манипуляции с телом, это таинство обмена энергией, которая способна зарядить, излечить....</p>
 	        			</div>
       				</div>
         		</div>
@@ -96,64 +130,76 @@
       </div>
     </section>
 
-		<section class="ftco-section ftco-discount img" style="background-image: url({% static 'images/bg_2.jpg' %});">
+		<section class="ftco-section ftco-discount img" style="background-image: url({% static 'images/salon1.jpg' %});">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-end">
 					<div class="col-md-5 discount ftco-animate">
-						<h3>Save up to 25% Off</h3>
-						<h2 class="mb-4">Student Discount</h2>
-						<p class="mb-4">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-						<p><a href="#" class="btn btn-white btn-outline-white px-4 py-3">Book Now</a></p>
+						<h3>Скидки для Студентам</h3>
+						<h2 class="mb-4"></h2>
+						<p class="mb-4"> Перманентный макияж – 24 часа в сутки Вы будете выглядеть не хуже голливудской звезды. Минимум косметики, без затрат времени на подводку глаз и нанесение помады. Сделает черты лица ярче и акцентированней.</p>
+						<p><a href="#" class="btn btn-white btn-outline-white px-4 py-3">Нажми и узнай больше</a></p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-    <section class="ftco-section">
+
+			<section class="ftco-section">
     	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
+
+        	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Наши работы</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p class="work-category">
+            	<span class="px-2"><a href="#" class="active">Все</a></span>
+            	<span class="px-2"><a href="https://www.instagram.com/p/CUR2vC3Df65/?utm_source=ig_web_copy_link">Макияж</a></span>
+            	<span class="px-2"><a href="https://www.instagram.com/p/CNugfV6D4G6/?utm_source=ig_web_copy_link">Массаж</a></span>
+            	<span class="px-2"><a href="https://www.instagram.com/p/CMjYGllDF4L/?utm_source=ig_web_copy_link">Спа</a></span>
+            	<span class="px-2"><a href="https://www.instagram.com/p/CMwJG_7DP8R/?utm_source=ig_web_copy_link">Стрижки</a></span>
+            	<span class="px-2"><a href="https://www.instagram.com/p/CNPYqx6De8j/?utm_source=ig_web_copy_link">Маникюр</a></span>
+            </p>
           </div>
         </div>
+        </div>
+
+
         <div class="row">
         	<div class="col-md-4 ftco-animate">
         		<a href="#" class="work-entry">
-        			<img src="" class="img-fluid" alt="Colorlib Template">
+        			<img src="{% static 'images/manikur.jpg' %}" class="img-fluid" alt="Colorlib Template">
         			<div class="info d-flex align-items-center">
         				<div>
         					<div class="icon mb-4 d-flex align-items-center justify-content-center">
         						<span class="icon-search"></span>
         					</div>
-		        			<h3></h3>
+		        			<h3>Маникюр</h3>
 	        			</div>
         			</div>
         		</a>
         	</div>
         	<div class="col-md-4 ftco-animate">
         		<a href="#" class="work-entry">
-        			<img src="{% static 'images/work-2.jpg' %}" class="img-fluid" alt="Colorlib Template">
+        			<img src="{% static 'images/makiaj.jpg' %}" class="img-fluid" alt="Colorlib Template">
         			<div class="info d-flex align-items-center">
         				<div>
         					<div class="icon mb-4 d-flex align-items-center justify-content-center">
         						<span class="icon-search"></span>
         					</div>
-		        			<h3>Hair Style</h3>
+		        			<h3>Макияж</h3>
 	        			</div>
         			</div>
         		</a>
         	</div>
         	<div class="col-md-4 ftco-animate">
         		<a href="#" class="work-entry">
-        			<img src="{% static 'images/work-3.jpg' %}" class="img-fluid" alt="Colorlib Template">
+        			<img src="{% static 'images/resniza.jpg' %}" class="img-fluid" alt="Colorlib Template">
         			<div class="info d-flex align-items-center">
         				<div>
         					<div class="icon mb-4 d-flex align-items-center justify-content-center">
         						<span class="icon-search"></span>
         					</div>
-		        			<h3>Makeup</h3>
+		        			<h3>Ресница</h3>
 	        			</div>
         			</div>
         		</a>
@@ -197,8 +243,8 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Beauty Pricing</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h2 class="mb-4">Замечательные цены</h2>
+            <p>onsona</p>
           </div>
         </div>
         <div class="row">
@@ -280,7 +326,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-flower"></span></div>
-		              	<span>Makeup Over Done</span>
+		              	<span>Макияж</span>
 		                <strong class="number" data-number="3500">0</strong>
 		              </div>
 		            </div>
@@ -289,7 +335,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-flower"></span></div>
-		              	<span>Procedure</span>
+		              	<span>Процедура</span>
 		                <strong class="number" data-number="1000">0</strong>
 		              </div>
 		            </div>
@@ -298,7 +344,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-flower"></span></div>
-		              	<span>Happy Client</span>
+		              	<span>Счастливые клиенты</span>
 		                <strong class="number" data-number="3000">0</strong>
 		              </div>
 		            </div>
@@ -307,7 +353,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-flower"></span></div>
-		              	<span>Skin Treatment</span>
+		              	<span>Стрижки</span>
 		                <strong class="number" data-number="900">0</strong>
 		              </div>
 		            </div>
@@ -318,63 +364,97 @@
       </div>
     </section>
 
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_1.jpg' %});">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_2.jpg' %});">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_3.jpg' %});">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--    <section class="ftco-section">-->
+<!--      <div class="container">-->
+<!--        <div class="row justify-content-center mb-5 pb-3">-->
+<!--          <div class="col-md-7 heading-section ftco-animate text-center">-->
+<!--            <h2 class="mb-4">Recent from blog</h2>-->
+<!--            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row d-flex">-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_1.jpg' %});">-->
+<!--              </a>-->
+<!--              <div class="text py-4 d-block">-->
+<!--              	<div class="meta">-->
+<!--                  <div><a href="#">Sept 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_2.jpg' %});">-->
+<!--              </a>-->
+<!--              <div class="text py-4 d-block">-->
+<!--              	<div class="meta">-->
+<!--                  <div><a href="#">Sept 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url({% static 'images/image_3.jpg' %});">-->
+<!--              </a>-->
+<!--              <div class="text py-4 d-block">-->
+<!--              	<div class="meta">-->
+<!--                  <div><a href="#">Sept 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mt-2"><a href="#">Skin Care for Teen Skin</a></h3>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+<div class="wpb_wrapper">
+				<div class="divider-wrap"><div style="height: 90px;" class="divider"></div></div>
+	<div id="fws_626f8d5e6adb2" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section    " style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   " style=""></div> </div><div class="col span_12  left">
+	<div class="vc_col-sm-4 wpb_column column_container vc_column_container col no-extra-padding instance-67" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+		<div class="vc_column-inner">
+		<div class="wpb_wrapper">
+
+		</div>
+	</div>
+	</div>
+
+	<div style="" class="vc_col-sm-4 wpb_column column_container vc_column_container col no-extra-padding instance-68" data-using-bg="true" data-shadow="large_depth" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="#d1c435" data-bg-cover="" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#d1c435" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+		<div class="vc_column-inner">
+		<div class="wpb_wrapper">
+			<h1 style="font-size: 45px;text-align: center" class="vc_custom_heading">Наш салон</h1>
+		</div>
+	</div>
+	</div>
+
+	<div class="vc_col-sm-4 wpb_column column_container vc_column_container col no-extra-padding instance-69" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+		<div class="vc_column-inner">
+		<div class="wpb_wrapper">
+
+		</div>
+	</div>
+	</div>
+</div></div>
+	<div class="wpb_gallery wpb_content_element clearfix">
+		<div class="wpb_wrapper"><div class="wpb_gallery_slidesflickity_style" data-interval="5"><div class="nectar-flickity not-initialized instance-0 flickity-enabled is-draggable" data-shadow="x_large_depth" data-autoplay="true" data-autoplay-dur="" data-free-scroll="" data-controls="next_prev_arrows" data-desktop-columns="1" data-small-desktop-columns="1" data-tablet-columns="1"><div class="flickity-viewport" style="height: 432.9px; touch-action: pan-y;"><div class="flickity-slider" style="left: 0px; transform: translateX(-181%);"><div class="cell" style="position: absolute; left: 0%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-20-800x600.jpg" width="800" height="600" alt="05.04.2016---20" title="05.04.2016---20"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-20.jpg"></a></div><div class="cell" style="position: absolute; left: 67%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-29-800x600.jpg" width="800" height="600" alt="05.04.2016---29" title="05.04.2016---29"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-29.jpg"></a></div><div class="cell" style="position: absolute; left: 134%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-5-800x600.jpg" width="800" height="600" alt="05.04.2016---5" title="05.04.2016---5"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-5.jpg"></a></div><div class="cell is-selected" style="position: absolute; left: 201%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-72-800x600.jpg" width="800" height="600" alt="05.04.2016---72" title="05.04.2016---72"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-72.jpg"></a></div><div class="cell" style="position: absolute; left: 268%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-7-800x600.jpg" width="800" height="600" alt="05.04.2016---7" title="05.04.2016---7"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-7.jpg"></a></div><div class="cell" style="position: absolute; left: 335%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-10-800x600.jpg" width="800" height="600" alt="05.04.2016---10" title="05.04.2016---10"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-10.jpg"></a></div><div class="cell" style="position: absolute; left: 402%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-13-800x600.jpg" width="800" height="600" alt="05.04.2016---13" title="05.04.2016---13"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-13.jpg"></a></div><div class="cell" style="position: absolute; left: 469%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-14-800x600.jpg" width="800" height="600" alt="05.04.2016---14" title="05.04.2016---14"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-14.jpg"></a></div><div class="cell" style="position: absolute; left: 536%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-15-800x600.jpg" width="800" height="600" alt="05.04.2016---15" title="05.04.2016---15"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-15.jpg"></a></div><div class="cell" style="position: absolute; left: 603%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-16-800x600.jpg" width="800" height="600" alt="05.04.2016---16" title="05.04.2016---16"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-16.jpg"></a></div><div class="cell" style="position: absolute; left: 670%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-32-800x600.jpg" width="800" height="600" alt="05.04.2016---32" title="05.04.2016---32"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-32.jpg"></a></div><div class="cell" style="position: absolute; left: 737%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-35-800x600.jpg" width="800" height="600" alt="05.04.2016---35" title="05.04.2016---35"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-35.jpg"></a></div><div class="cell" style="position: absolute; left: 804%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-65-800x600.jpg" width="800" height="600" alt="05.04.2016---65" title="05.04.2016---65"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-65.jpg"></a></div><div class="cell" style="position: absolute; left: 871%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-1-800x600.jpg" width="800" height="600" alt="05.04.2016---1" title="05.04.2016---1"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-1.jpg"></a></div><div class="cell" style="position: absolute; left: 938%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-67-800x600.jpg" width="800" height="600" alt="05.04.2016---67" title="05.04.2016---67"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-67.jpg"></a></div><div class="cell" style="position: absolute; left: 1005%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-70-800x600.jpg" width="800" height="600" alt="05.04.2016---70" title="05.04.2016---70"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-70.jpg"></a></div><div class="cell" style="position: absolute; left: 1072%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-75-800x600.jpg" width="800" height="600" alt="05.04.2016---75" title="05.04.2016---75"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-75.jpg"></a></div><div class="cell" style="position: absolute; left: 1139%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-78-800x600.jpg" width="800" height="600" alt="05.04.2016---78" title="05.04.2016---78"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-78.jpg"></a></div><div class="cell" style="position: absolute; left: 1206%;"><img class="" src="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-81-800x600.jpg" width="800" height="600" alt="05.04.2016---81" title="05.04.2016---81"><a class="entire-slide-link gallery magnific" href="https://salon.spa.kg/wp-content/uploads/2018/09/05.04.2016-81.jpg"></a></div></div></div><button class="flickity-prev-next-button previous" type="button" aria-label="previous"><svg viewBox="0 0 100 100"><path d="M 20,50 L 70,80 L 70,75 L 70,50  L 70,25 L 70,20 Z" class="arrow"></path></svg></button><button class="flickity-prev-next-button next" type="button" aria-label="next"><svg viewBox="0 0 100 100"><path d="M 20,50 L 70,80 L 70,75 L 70,50  L 70,25 L 70,20 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button></div></div>
+		</div>
+	</div>
+			</div>
+
 
 		
 		<section class="ftco-section ftco-appointment">
@@ -385,47 +465,54 @@
 	    		<div class="col-md-4 d-flex align-self-stretch ftco-animate">
 	    			<div class="appointment-info text-center p-5">
 	    				<div class="mb-4">
-	    					<h3 class="mb-3">Address</h3>
-		    				<p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+	    					<h3 class="mb-3">Адресс</h3>
+		    				<p>Город Нарын улица Ленина</p>
 	    				</div>
 	    				<div class="mb-4">
-		    				<h3 class="mb-3">Phone</h3>
-		    				<p class="day"><strong>000 123 456</strong> or <strong>000 987 654</strong></p>
+		    				<h3 class="mb-3">Телефон</h3>
+		    				<p class="day"><strong>0706463626</strong> or <strong>0705463626</strong></p>
 	    				</div>
 	    				<div>
-		    				<h3 class="mb-3">Opening Hours</h3>
-		    				<p class="day"><strong>Monday - Friday</strong></p>
-		    				<span>08:00am - 09:00pm</span>
+		    				<h3 class="mb-3">Работаем</h3>
+		    				<p class="day"><strong>понедельник - воскресенье</strong></p>
+		    				<span>09:00 - 20:00</span>
 	    				</div>
 	    			</div>
 	    		</div>
 	    		<div class="col-md-6 appointment pl-md-5 ftco-animate">
-	    			<h3 class="mb-3">Appointments</h3>
-	    			<form action="#" class="appointment-form">
+	    			<h3 class="mb-3">Записавайся</h3>
+	    			<form action="{% url 'booking-url' %}" method="post" class="appointment-form">
+						{% csrf_token %}
 	            <div class="row form-group d-flex">
 	            	<div class="col-md-6">
-	            		<input type="text" class="form-control" placeholder="First Name">
+	            		<input type="text" class="form-control" placeholder="Имя" name="first_name">
 	            	</div>
 	            	<div class="col-md-6">
-	            		<input type="text" class="form-control" placeholder="Last Name">
+	            		<input type="text" class="form-control" placeholder="Фамилия" name="last_name">
 	            	</div>
 	            </div>
+
+              <select class="ulp-input ulp-input-field" name="ulp-custom-field-ooxb" onfocus="jQuery(this).removeClass('ulp-input-error');"><option value="">Выберите время</option><option value="8:00">8:00</option><option value="9:00">9:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option><option value="19:00">19:00</option></select>
+
 	            <div class="row form-group d-flex">
 	            	<div class="col-md-6">
 	            		<div class="input-wrap">
 		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" id="appointment_date" class="form-control" placeholder="Date">
+		            		<input type="text" id="appointment_date" class="form-control" placeholder="День" name="date">
 	            		</div>
 	            	</div>
+
+					<select class="ulp-input ulp-input-field" name="ulp-custom-field-38bK" onfocus="jQuery(this).removeClass('ulp-input-error');"><option value="">Выберите услугу</option><option value="Маникюр">Маникюр</option><option value="Стрижка">Стрижка</option><option value="Окрашивание">Окрашивание</option><option value="Детские услуги">Детские услуги</option><option value="Макияж">Макияж</option><option value="Косметология">Косметология</option><option  value="Уход за телом">Уход за телом</option><option value="Массаж">Массаж</option></select>
+
 	            	<div class="col-md-6">
-	            		<input type="text" class="form-control" placeholder="Phone">
+	            		<input type="text" class="form-control" placeholder="Телефон" name="phone">
 	            	</div>
 	            </div>
 	            <div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+	              <textarea name="message" id="" cols="30" rows="3" class="form-control" placeholder="Сообщение"></textarea>
 	            </div>
 	            <div class="form-group">
-	              <input type="submit" value="Order" class="btn btn-white btn-outline-white py-3 px-4">
+	              <input type="submit" value="Записаться" class="btn btn-white btn-outline-white py-3 px-4">
 	            </div>
 	          </form>
 	    		</div>    			
@@ -433,4 +520,12 @@
     	</div>
     </section>
 
+
+
+
+
 {% endblock %}
+
+
+
+

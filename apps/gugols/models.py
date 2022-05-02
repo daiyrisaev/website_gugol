@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -77,3 +78,27 @@ class Services(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SignIn(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    category = models.ForeignKey(to=Category,on_delete=models.DO_NOTHING)
+    date = models.DateTimeField(default=timezone.now)
+    phone = models.CharField(max_length=11)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name = "Записываюший человек"
+        verbose_name_plural = "Записываюший человеки"
+
+    def __str__(self):
+        return self.last_name
+
+#
+# class Comment(models.Model):
+#     name = models.CharField(max_length=200)
+#     email = models.EmailField(unique=True)
+#     message = models.TextField()
+#     amount = models.CharField(max_length=255)
+#     created_at = models.DateTimeField(auto_now_add=True)
