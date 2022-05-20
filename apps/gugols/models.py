@@ -80,25 +80,31 @@ class Services(models.Model):
         return self.name
 
 
-class SignIn(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    category = models.ForeignKey(to=Category,on_delete=models.DO_NOTHING)
-    date = models.DateTimeField(default=timezone.now)
-    phone = models.CharField(max_length=11)
-    message = models.TextField()
 
-    class Meta:
-        verbose_name = "Записываюший человек"
-        verbose_name_plural = "Записываюший человеки"
-
-    def __str__(self):
-        return self.last_name
-
+# class SignIn(models.Model):
+#     STATUS_NEW = "new"
+#     STATUS_CONFIRMED = "confirmed"
+#     STATUS_FINISHED = "finished"
+#     STATUS_REJECTED = "rejected"
+#     BOOKING_STATUSES = (
+#         (STATUS_NEW,"Новый"),
+#         (STATUS_CONFIRMED,"Подтвержден"),
+#         (STATUS_FINISHED,"Завершен" ),
+#         (STATUS_REJECTED,"Отменен")
+#     )
+#     #
 #
-# class Comment(models.Model):
-#     name = models.CharField(max_length=200)
-#     email = models.EmailField(unique=True)
-#     message = models.TextField()
-#     amount = models.CharField(max_length=255)
-#     created_at = models.DateTimeField(auto_now_add=True)
+#     category = models.ForeignKey(to=Category,on_delete=models.CASCADE)
+#     mobile = models.CharField("Номер телефона",max_length=11,choices=BOOKING_STATUSES,default=STATUS_NEW)
+#     is_paid = models.BooleanField("оплачено",default=False)
+#     status = models.CharField("статус",max_length=11)
+#
+#     class Meta:
+#         verbose_name= "Запищуваищий "
+#         verbose_name_plural="записатся"
+#
+#
+#     def __str__(self):
+#         return f"Бронь{self.id}"
+
+

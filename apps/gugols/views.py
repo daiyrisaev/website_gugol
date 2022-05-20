@@ -1,12 +1,13 @@
 import queue
 
+
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, redirect
 
-from apps.gugols.models import Publication, Category, OurWork, SendUserAdmin, Workers, Services, SignIn
+from apps.gugols.models import Publication, Category, OurWork, SendUserAdmin, Workers, Services
 from django.views import generic
 
-from apps.gugols.forms import UserSendForm, SignInForm
+from apps.gugols.forms import UserSendForm
 
 
 class BeautyListView(generic.ListView):
@@ -100,27 +101,10 @@ def send_to_admin(request):
                 email=email_form.data['email'],
                 message=email_form.data['message']
                 )
-            return HttpResponse(content='данные успешно отпрвлены.')
+            return redirect('contact-url')
         else:
 
             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-
-#
-# def add_comment_publication(request, pk):#запрос
-#     if request.method == 'POST': #запрос
-#         post_request_data = request.POST
-#         comment_form = CommentForm(post_request_data)
-#         print('здесь значение рекуест пост ', request.POST)  #запрос
-#         if comment_form.is_valid():
-#             comment=Comment.objects.create(
-#                 name=comment_form.data['name'],
-#                 email=comment_form.data['email'],
-#                 message=comment_form.data['message'],
-#                 category_id=pk)
-#
-#             return HttpResponse(content='каментарий успешно добавлен.')
-#         else:
-#             return HttpResponse(content=f'покоже вы не правильно заполнили форму:{comment_form.errors}')
 
 
 def create_booking_tour(request):
@@ -135,11 +119,10 @@ def create_booking_tour(request):
                 phone=email_form.data['phone'],
                 message=email_form.data['message']
                 )
-            return HttpResponse(content='данные успешно отпрвлены.')
+            return redirect('publications_list-url')
         else:
+
             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-
-
 
 
 

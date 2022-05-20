@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      {% load static %}
+<head>
+    {% load static %}
     <title>gugol</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
@@ -26,153 +26,189 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  <body>
+</head>
+<body>
+<style>
+.my_overlay {
+    display:none;
+    background: #00000050 !important;
+}
 
-    <div class="hero-wrap js-fullheight" style="background-image: url('/static/images/daiyr.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
+.overlay_active {
+    display: flex !important;
+    background: #00000050 !important;
+    width:100% !important;
+    height: 100vh !important;
+    position:absolute !important;
+    top:0 !important;
+    left:0 !important ;
+}
+.modal-content {
+    width: 40%;
+    height: 50%;
+
+}
+</style>
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/daiyr.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-8 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          	<div class="icon">
-          		<a href="index.html" class="logo">
-          			<span class="flaticon-flower"></span>
-          			<h1>Gugol</h1>
-          		</a>
-          	</div>
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Салон Красоты</h1>
-            <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#"></a></p>
+            <div class="col-md-8 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="icon">
+                    <a href="index.html" class="logo">
+                        <span class="flaticon-flower"></span>
+                        <h1>Gugol</h1>
+                    </a>
+                </div>
+                <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Салон Красоты</h1>
+                <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#"></a></p>
 
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://www.instagram.com/tv/CMOgGkbD7bI/?utm_source=ig_web_copy_link" class="btn btn-white btn-outline-white px-4 py-3">View Our Services</a></p>
-          </div>
+                <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://www.instagram.com/tv/CMOgGkbD7bI/?utm_source=ig_web_copy_link" class="btn btn-white btn-outline-white px-4 py-3">View Our Services</a></p>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Gugol</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Gugol</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{% url 'publications_list-url' %}" class="nav-link">Главный</a></li>
-	          <li class="nav-item"><a href="{% url 'about-url' %}" class="nav-link">О нас</a></li>
-	          <li class="nav-item"><a href="{% url 'service-url' %}" class="nav-link">Услуги</a></li>
-	          <li class="nav-item"><a href="{% url 'work-url' %}" class="nav-link">Наши работы</a></li>
-<!--	          <li class="nav-item"><a href="{% url 'publication_list-url' %}" class="nav-link">Блог</a></li>-->
-	          <li class="nav-item"><a href="{% url 'contact-url' %}" class="nav-link">Контакты</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="{% url 'publications_list-url' %}" class="nav-link">Главный</a></li>
+                <li class="nav-item"><a href="{% url 'about-url' %}" class="nav-link">О нас</a></li>
+                <li class="nav-item"><a href="{% url 'service-url' %}" class="nav-link">Услуги</a></li>
+                <li class="nav-item"><a href="{% url 'work-url' %}" class="nav-link">Наши работы</a></li>
+                <!--	          <li class="nav-item"><a href="{% url 'publication_list-url' %}" class="nav-link">Блог</a></li>-->
+                <li class="nav-item"><a href="{% url 'contact-url' %}" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-     {% block content %}
-     {% endblock %}
+{% block content %}
+{% endblock %}
 
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
+<footer class="ftco-footer ftco-section img">
+    <div class="overlay"></div>
+    <div class="container">
         <div class="row mb-5">
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">О нас</h2>
-              <p>Самый лучший салон в городе Нарын</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/gugol_beauty_house_naryn"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Gugol</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url({% static 'images/salon1.jpg' %});"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#"></a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> май 12, 2022</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">О нас</h2>
+                    <p>Самый лучший салон в городе Нарын</p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/gugol_beauty_house_naryn"><span class="icon-instagram"></span></a></li>
+                    </ul>
                 </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url({% static 'images/gugol.jpg' %});"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#"></a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> май 12, 2022</a></div>
-                    <div><a href="#"><span class="icon-person"></span> gugol</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Gugol</h2>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url({% static 'images/salon1.jpg' %});"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#"></a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> май 12, 2022</a></div>
+                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url({% static 'images/gugol.jpg' %});"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#"></a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> май 12, 2022</a></div>
+                                <div><a href="#"><span class="icon-person"></span> gugol</a></div>
+                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md-2">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Салон Гугол</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Спа</a></li>
-                <li><a href="#" class="py-2 d-block">Mассаж</a></li>
-                <li><a href="#" class="py-2 d-block">Стрижка</a></li>
-                <li><a href="#" class="py-2 d-block">Ресница</a></li>
-                <li><a href="#" class="py-2 d-block">Сауна</a></li>
-                <li><a href="#" class="py-2 d-block">Макияж</a></li>
-              </ul>
+            <div class="col-md-2">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Салон Гугол</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-2 d-block">Спа</a></li>
+                        <li><a href="#" class="py-2 d-block">Mассаж</a></li>
+                        <li><a href="#" class="py-2 d-block">Стрижка</a></li>
+                        <li><a href="#" class="py-2 d-block">Ресница</a></li>
+                        <li><a href="#" class="py-2 d-block">Сауна</a></li>
+                        <li><a href="#" class="py-2 d-block">Макияж</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Есть вопросы?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Город Нарын</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+996706463626</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">aijarkyn@gmail.com</span></a></li>
-	              </ul>
-	            </div>
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Есть вопросы?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">Город Нарын</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+996706463626</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">aijarkyn@gmail.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <div class="row">
-          <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-   &copy;<script></script>  This website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.instagram.com/daiiyr" target="_blank">Daiyr</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    &copy;<script></script>  This website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.instagram.com/daiiyr" target="_blank">Daiyr</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
 
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script>
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("myBtn");
+    let span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      document.querySelector(".my_overlay").classList.add("overlay_active")
+    }
+    span.onclick = function() {
+      document.querySelector(".my_overlay").classList.remove("overlay_active")
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        document.querySelector(".my_overlay").classList.remove("overlay_active")
+      }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
-
-  <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'js/aos.js' %}"></script>
-  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
-  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
-  <script src="{% static 'js/scrollax.min.js' %}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{% static 'js/google-map.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-
-  </body>
+</body>
 </html>
