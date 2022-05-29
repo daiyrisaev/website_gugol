@@ -31,7 +31,6 @@ class Publication(models.Model):
 
 class OurWork(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField()
     image = models.ImageField(upload_to='publication_images',null=True)
 
     class Meta:
@@ -80,31 +79,19 @@ class Services(models.Model):
         return self.name
 
 
+class SignIn(models.Model):
+    name = models.CharField("ФИО",max_length=25)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,verbose_name="Выберите услугу")
+    mobile = models.CharField("Номер телефона", max_length=11)
+    is_paid = models.BooleanField("оплачено", default=False)
+    message = models.CharField("Пожелание \ сообщения", max_length=250)
+    date = models.DateField("Дата")
+    time = models.TimeField("Время")
 
-# class SignIn(models.Model):
-#     STATUS_NEW = "new"
-#     STATUS_CONFIRMED = "confirmed"
-#     STATUS_FINISHED = "finished"
-#     STATUS_REJECTED = "rejected"
-#     BOOKING_STATUSES = (
-#         (STATUS_NEW,"Новый"),
-#         (STATUS_CONFIRMED,"Подтвержден"),
-#         (STATUS_FINISHED,"Завершен" ),
-#         (STATUS_REJECTED,"Отменен")
-#     )
-#     #
-#
-#     category = models.ForeignKey(to=Category,on_delete=models.CASCADE)
-#     mobile = models.CharField("Номер телефона",max_length=11,choices=BOOKING_STATUSES,default=STATUS_NEW)
-#     is_paid = models.BooleanField("оплачено",default=False)
-#     status = models.CharField("статус",max_length=11)
-#
-#     class Meta:
-#         verbose_name= "Запищуваищий "
-#         verbose_name_plural="записатся"
-#
-#
-#     def __str__(self):
-#         return f"Бронь{self.id}"
+    class Meta:
+        verbose_name = "Запис "
+        verbose_name_plural = "Записи"
 
+    def __str__(self):
+        return self.name
 

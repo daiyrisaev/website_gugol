@@ -19,8 +19,8 @@
         </div>
         <div class="row">
 			{% for work in works %}
-        	<div class="col-md-4 ftco-animate">
-        		<a href="{% url 'work-url'  %}" class="work-entry">
+            	<div class="col-md-4 ftco-animate">
+        		<a href="#" class="work-entry">
         			<img src="{{work.image.url}}" class="img-fluid" alt="Colorlib Template">
         			<div class="info d-flex align-items-center">
         				<div>
@@ -33,20 +33,54 @@
         		</a>
         	</div>
 			{% endfor %}
-
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-    	</div>
+    	      </div>
 			</div>
     </section>
 
+
+
+ <div class="d-flex">
+      <ul class="pagination ms-auto">
+        {% if page_obj.has_previous %}
+          <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+            <a class="page-link" href="?page={{page_obj.previous_page_number}}" tabindex="-1" aria-disabled="true">
+              <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="15 6 9 12 15 18" /></svg>
+              prev
+            </a>
+          </li>
+        {% endif %}
+
+        {% for i in page_obj.paginator.get_elided_page_range %}
+          {% if i == page_obj.paginator.ELLIPSIS %}
+            <li class="page-item ">
+              <a class="page-link" href="?page={{i}}">
+            {{i}}
+            </a>
+          </li>
+          {% else %}
+
+            <li class="page-item {% if i == page_obj.number %} active {% endif %}">
+              <a class="page-link" href="?page={{i}}">
+                {{i}}
+            </a>
+          </li>
+          {% endif %}
+
+
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <li class="page-item {% if not page_obj.has_next %} disabled {% endif %}">
+          <a class="page-link" href="?page={{page_obj.next_page_number}}">
+            next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
 {% endblock %}
+
+
+

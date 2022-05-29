@@ -1,7 +1,8 @@
 
 from django.contrib import admin
 
-from apps.gugols.models import Category, Publication, OurWork, SendUserAdmin, Workers, Services
+from apps.gugols.models import Category, Publication, OurWork, SendUserAdmin, Workers, Services, SignIn
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -32,7 +33,9 @@ class WorkersAdmin(admin.ModelAdmin):
 class ServicesAdmin(admin.ModelAdmin):
     pass
 
-#
-# @admin.register(SignIn)
-# class SignInAdmin(admin.ModelAdmin):
-#     pass
+
+@admin.register(SignIn)
+class SignInAdmin(admin.ModelAdmin):
+    pass
+
+

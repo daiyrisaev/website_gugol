@@ -9,11 +9,18 @@
     			</div>
     			<div class="col-md-6 pl-md-5 ftco-animate">
     				<h2 class="mb-4">Добро пожаловать в салон Gugol</h2>
-    				<p>Самый лучший салон красоты в городе Нарын,все удобста для клиентов.</p>
+    				<h6>Самый лучший салон красоты в городе Нарын,все удобста для клиентов.
+                    Наш салон был открыт в 2020 году. За годы успешной работы салона и тесного контакта с нашими клиентами, мы приобрели бесценный опыт как в сфере обслуживания, так и в профессиональном плане.</h6>
     		</div>
     	</div>
 			</div>
+<!--        {% static 'video/video2.MP4'%}-->
     </section>
+
+<div class="embed-responsive embed-responsive-21by9">
+    <p>xebbeibxbiecriufburibubiufcrbwuibfuiaeui</p>
+  <iframe class="embed-responsive-item" src=" {% static 'video/video2.MP4'%}"></iframe>
+</div>
 
     <section class="ftco-section bg-light">
       <div class="container">
@@ -27,20 +34,15 @@
 
 
 			{% for workers in about_list %}
-        	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-      				<div class="img mb-4" style="background-image: url({{workers.image.url}});"></div>
-					  <img src="{{workers.image.url}}" class="img-fluid" alt="Colorlib Template">
-      				<div class="info text-center">
-      					<h3><a href="">{{ workers.name }}</a></h3>
-     					<span class="position"></span>
-      					<div class="text">
-	        				<p>{{ workers.description }}</p>
-	        			</div>
-      				</div>
-        		</div>
-        	</div>
+                <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{workers.image.url}}" alt="Card image cap">
+                 <div class="card-body">
+                  <h5><a href="{% url 'publication_detail-url' workers.id %}" class="card-title">{{workers.name}}</a></h5>
+                 <p class="card-text">{{workers.description}}</p>
+                 </div>
+              </div>
 			{% endfor %}
+
 
         </div>
       </div>
@@ -48,54 +50,18 @@
 {% endblock %}
 
 
- <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Наши работы</h2>
-            <p>texts.</p>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="col-md-4 ftco-animate">
-        		<a href="#" class="work-entry">
-        			<img src="" class="img-fluid" alt="Colorlib Template">
-        			<div class="info d-flex align-items-center">
-        				<div>
-        					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-        						<span class="icon-search"></span>
-        					</div>
-		        			<h3></h3>
-	        			</div>
-        			</div>
-        		</a>
-        	</div>
-        	<div class="col-md-4 ftco-animate">
-        		<a href="#" class="work-entry">
-        			<img src="{% static 'images/work-2.jpg' %}" class="img-fluid" alt="Colorlib Template">
-        			<div class="info d-flex align-items-center">
-        				<div>
-        					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-        						<span class="icon-search"></span>
-        					</div>
-		        			<h3>Hair Style</h3>
-	        			</div>
-        			</div>
-        		</a>
-        	</div>
-        	<div class="col-md-4 ftco-animate">
-        		<a href="#" class="work-entry">
-        			<img src="{% static 'images/work-3.jpg' %}" class="img-fluid" alt="Colorlib Template">
-        			<div class="info d-flex align-items-center">
-        				<div>
-        					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-        						<span class="icon-search"></span>
-        					</div>
-		        			<h3>Makeup</h3>
-	        			</div>
-        			</div>
-        		</a>
-        	</div>
-        </div>
-    	</div>
-    </section>
+
+
+<!--   	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">-->
+<!--        		<div class="staff">-->
+<!--      				<div class="img mb-4" style="background-image: url({{workers.image.url}});"></div>-->
+<!--					  <img src="{{workers.image.url}}" class="img-fluid" alt="Colorlib Template">-->
+<!--      				<div class="info text-center">-->
+<!--      					<h3><a href="{% url 'publication_detail-url' workers.id %}">{{ workers.name }}</a></h3>-->
+<!--     					<span class="position"></span>-->
+<!--      					<div class="text">-->
+<!--	        				<p>{{ workers.description }}</p>-->
+<!--	        			</div>-->
+<!--      				</div>-->
+<!--        		</div>-->
+<!--        	</div>-->

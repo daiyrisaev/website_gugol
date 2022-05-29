@@ -4,10 +4,11 @@ import queue
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, redirect
 
-from apps.gugols.models import Publication, Category, OurWork, SendUserAdmin, Workers, Services
+from apps.gugols.models import Publication, Category, OurWork, SendUserAdmin, Workers, Services, SignIn
 from django.views import generic
 
-from apps.gugols.forms import UserSendForm
+from apps.gugols.forms import UserSendForm, SignInForm
+from django.views.generic import FormView, ListView, CreateView
 
 
 class BeautyListView(generic.ListView):
@@ -33,8 +34,8 @@ class BeautyListView(generic.ListView):
 
 class BeautyDetailView(generic.DetailView):
     template_name = 'blog-single.html'
-    context_object_name = 'publication'
-    model = Publication
+    context_object_name = 'about_list'
+    model = Workers
     slug_field = 'id'
     slug_url_kwarg = 'pub_pk'
 
@@ -44,15 +45,16 @@ class BeautyDetailView(generic.DetailView):
         return context
 
 
-class BeautyIndexView(generic.TemplateView):
+class BeautyIndexView(CreateView):
     template_name = 'index.html'
-    # context_object_name = 'publication_list'
-    # model = PublicationFood
+    form_class = SignInForm
+    context_object_name = 'publications'
+    model = SignIn
+    success_url = "/publication/"
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(BeautyIndexView, self).get_context_data(**kwargs)
-        context['publications'] = Publication.objects.all()
-        return context
+    def form_valid(self, form):
+        self.form_class(form.cleaned_data)
+        return super(BeautyIndexView, self).form_valid(form)
 
 
 class BeautyAboutView(generic.TemplateView):
@@ -73,13 +75,11 @@ class BeautyServiceView(generic.TemplateView):
         return context
 
 
-class BeautyWorkView(generic.TemplateView):
+class BeautyWorkView(ListView):
     template_name = 'work.html'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(BeautyWorkView, self).get_context_data(**kwargs)
-        context['works'] = OurWork.objects.all()
-        return context
+    paginate_by = 6
+    model = OurWork
+    context_object_name = 'works'
 
 
 class BeautyContactView(generic.TemplateView):
@@ -105,48 +105,20 @@ def send_to_admin(request):
         else:
 
             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-
-
-def create_booking_tour(request):
-    if request.method == 'POST':
-        post_request = request.POST
-        email_form = SignInForm(post_request)
-        if email_form.is_valid():
-            booking = SignIn.objects.create(
-                first_name=email_form.data['first_name'],
-                last_name=email_form.data['last_name'],
-                date=email_form.data['date'],
-                phone=email_form.data['phone'],
-                message=email_form.data['message']
-                )
-            return redirect('publications_list-url')
-        else:
-
-            return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-
-
-
-
-
-
-
-
-
-
-
-# def create_booking_tour(request):
+#
+#
+# def signin(request):
 #     if request.method == "POST":
-#         sign = SignIn.objects.all()
+#         # sign = SignIn.objects.all()
 #         form = SignInForm(request.POST)
 #         if form.is_valid():
 #             data = form.cleaned_data
 #             print(data)
 #             instance = form.save(commit=False)
-#             instance.user = request.user
 #             instance.save()
-#             context = {"sign": sign, 'form': form}
-#             return render(request,"index.html",context)
-
+#             context = {'form_sing_in': form}
+#             return render(request, "index.html", context)
+#         return HttpResponse(content=f'Похоже вы неправильно заполнили форму')
 
 
 

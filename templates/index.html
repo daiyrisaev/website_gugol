@@ -2,23 +2,60 @@
 {% block content %}
 {% load static %}
 <!--		-->
-<section class="ftco-section ftco-discount img" style="background-image: url({% static 'images/salon2.jpg' %});">
-	<div class="overlay"></div>
+<section class="ftco-section">
 	<div class="container">
-		<div class="row justify-content-end">
-			<div class="col-md-5 discount ftco-animate">
-				<h3></h3>
-
-				<h3 class="mb-4">Добро пожаловать в салон Gugol</h3>
-				<p class="mb-4">Самый лучший салон красоты в городе Нарын,все удобста для клиентов.
-					Дорогие гости нашего торгового комплекса! Вас приветствует салон красоты «Гугол»
-					Наши мастера предлагают полный спектр услуг для здоровья и красоты Ваших волос: причёски и укладки, биозавивки и кератиновое выпрямление волос, эксклюзивная процедура бустап и окраска волос с применением продукции премиум-класса Пол Митчелл. В нашем салоне ведёт приём врач-косметолог.
-					Предлагаем Вам посетить наш салон!</p>
-				<p><a href="https://www.instagram.com/gugol_beauty_house_naryn/" class="btn btn-white btn-outline-white px-4 py-3">Нажми и узнай больше</a></p>
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h1 class="mb-4">Наш салон</h1>
+				<p>Красивее не куда.</p>
 			</div>
+		</div>
+
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="{% static 'images/salon1.jpg' %}" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon2.jpg' %}" alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon10.jpg' %}" alt="Third slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon11.jpg' %}" alt="fourth slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon12.jpg' %}" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon13.jpg' %}" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'images/salon14.jpg' %}" alt="First slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>
 	</div>
 </section>
+
 
 
 
@@ -36,7 +73,7 @@
 				<div class="staff">
 					<div class="img mb-4" style="background-image: url('/static/images/nails.jpg');"></div>
 					<div class="info text-center">
-						<h3><a href="teacher-single.html">Дарья</a></h3>
+						<h3><a href="{% url 'publications_list-url' %}">Дарья</a></h3>
 						<span class="position">
 
 							Мастер маникюра и педикюра</span>
@@ -51,7 +88,7 @@
 				<div class="staff">
 					<div class="img mb-4" style="background-image: url({% static 'images/admin.jpg' %});"></div>
 					<div class="info text-center">
-						<h3><a href="teacher-single.html">Уулкан</a></h3>
+						<h3><a href="{% url 'publications_list-url' %}">Уулкан</a></h3>
 						<span class="position">Администратор</span>
 						<div class="text">
 							<p>«...Работа администратора очень ответственная! Все мы знаем, как важно именно первое
@@ -66,7 +103,7 @@
 				<div class="staff">
 					<div class="img mb-4" style="background-image: url({% static 'images/ula.jpg' %});"></div>
 					<div class="info text-center">
-						<h3><a href="teacher-single.html">Юлия</a></h3>
+						<h3><a href="{% url 'publications_list-url' %}">Юлия</a></h3>
 						<span class="position">Менеджер</span>
 						<div class="text">
 							<p>Как театр начинается с вешалки, так салон красоты начинается с Ресепшн. Администратор - это связь целой системы с миром. На работу как на праздник - придерживаюсь именно такой точки зрения, подобное отношение к работе, позволяет нам оставаться лучшими на протяжении многих лет! Открывая дверь нашего салона, переступив порог... Вы попадаете в атмосферу добра и заботы! «Гость»- для меня это не просто слово! Каждый гость имеет колоссальное значение, только так можно выполнить качественно свои обязанности.
@@ -75,12 +112,13 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 			<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
 				<div class="staff">
 					<div class="img mb-4" style="background-image: url({% static 'images/message.jpg' %});"></div>
 					<div class="info text-center">
-						<h3><a href="teacher-single.html">Марина</a></h3>
+						<h3><a href="{% url 'publications_list-url' %}">Марина</a></h3>
 						<span class="position">Массажист</span>
 						<div class="text">
 							<p>Массажист или мастер по телу... Представляете ли Вы сколько всего должны содержать
@@ -97,12 +135,6 @@
 	<div  style="position:relative: margin-top:-50px;" class="my_overlay-block">
 		<div id="myModal" class="my_overlay">
 
-
-			<div class="modal-content">
-				<span class="close">&times;</span>
-				<p style="color:black">Some text in the Modal..</p>
-			</div>
-
 		</div>
 		<div class="container">
 			<div class="row justify-content-end">
@@ -110,15 +142,38 @@
 					<h3>Запишись</h3>
 					<h2 class="mb-4"></h2>
 					<p class="mb-4"> Вам нужно хорошо подстричься, или сделать цвет лица более естественным? Кожа или ногти уже не те, что прежде? Всё поправимо! Стоит лишь обратиться к услугам профессионалов. Ведь секретом сохранения и мужской, и женской привлекательности в полной мере владеют лишь профессионалы индустрии красоты. Точно так же, как и умением показать в лучшем свете неповторимую индивидуальность личности человека..</p>
-					<button id="myBtn">Open Modal</button>
-
-
-
+<!--                      <button type="button" class="btn btn-warning" data-toggle="modal"data-target="#tour_modal">Запишись</button>-->
+					 <button type="button" class="btn btn-white btn-outline-white px-4 py-3" data-toggle="modal"data-target="#tour_modal">Запишись</button>
+                      <small>Нажми и запишись</small>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+<div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Записывайся</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post">
+        <div class="modal-body">
+            {% csrf_token %}
+            {{ form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
 
 
 <section class="ftco-section">
@@ -342,119 +397,41 @@
 </section>
 
 
-<section class="ftco-section">
-	<div class="container">
-		<div class="row justify-content-center mb-5 pb-3">
-			<div class="col-md-7 heading-section ftco-animate text-center">
-				<h1 class="mb-4">Наш салон</h1>
-				<p>Красивее не куда.</p>
-			</div>
-		</div>
-
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="d-block w-100" src="{% static 'images/salon1.jpg' %}" alt="First slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="{% static 'images/salon2.jpg' %}" alt="Second slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="{% static 'images/salon4.jpg' %}" alt="Third slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="{% static 'images/salon5.jpg' %}" alt="fourth slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="{% static 'images/salon6.jpg' %}" alt="First slide">
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-</section>
-
-
-
-
-<!--		<section class="ftco-section ftco-appointment">-->
-<!--			<div class="overlay"></div>-->
-<!--    	<div class="container">-->
-<!--    		<div class="row d-md-flex align-items-center">-->
-<!--    			<div class="col-md-2"></div>-->
-<!--	    		<div class="col-md-4 d-flex align-self-stretch ftco-animate">-->
-<!--	    			<div class="appointment-info text-center p-5">-->
-<!--	    				<div class="mb-4">-->
-<!--	    					<h3 class="mb-3">Адресс</h3>-->
-<!--		    				<p>Город Нарын улица Ленина</p>-->
-<!--	    				</div>-->
-<!--	    				<div class="mb-4">-->
-<!--		    				<h3 class="mb-3">Телефон</h3>-->
-<!--		    				<p class="day"><strong>0706463626</strong> or <strong>0705463626</strong></p>-->
-<!--	    				</div>-->
-<!--	    				<div>-->
-<!--		    				<h3 class="mb-3">Работаем</h3>-->
-<!--		    				<p class="day"><strong>понедельник - воскресенье</strong></p>-->
-<!--		    				<span>09:00 - 20:00</span>-->
-<!--	    				</div>-->
-<!--	    			</div>-->
-<!--	    		</div>-->
-<!--	    		<div class="col-md-6 appointment pl-md-5 ftco-animate">-->
-<!--	    			<h3 class="mb-3">Записавайся</h3>-->
-<!--	    			<form action="{% url 'booking-url' %}" method="post" class="appointment-form">-->
-<!--						{% csrf_token %}-->
-<!--	            		{{ form }}-->
-
-
-<!--&lt;!&ndash;              <select class="ulp-input ulp-input-field" name="ulp-custom-field-ooxb" onfocus="jQuery(this).removeClass('ulp-input-error');"><option value="">Выберите время</option><option value="8:00">8:00</option><option value="9:00">9:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option><option value="19:00">19:00</option></select>&ndash;&gt;-->
-
-<!--	            <div class="row form-group d-flex">-->
-
-<!--	            	<div class="col-md-6">-->
-<!--	            		<div class="input-wrap">-->
-<!--		            		<div class="icon"><span class="ion-md-calendar"></span></div>-->
-<!--		            		<input type="text" id="appointment_date" class="form-control" placeholder="День" name="date">-->
-<!--	            		</div>-->
-<!--	            	</div>-->
-
-<!--&lt;!&ndash;					<select class="ulp-input ulp-input-field" name="ulp-custom-field-38bK" onfocus="jQuery(this).removeClass('ulp-input-error');"><option value="">Выберите услугу</option><option value="Маникюр">Маникюр</option><option value="Стрижка">Стрижка</option><option value="Окрашивание">Окрашивание</option><option value="Детские услуги">Детские услуги</option><option value="Макияж">Макияж</option><option value="Косметология">Косметология</option><option  value="Уход за телом">Уход за телом</option><option value="Массаж">Массаж</option></select>&ndash;&gt;-->
-
-<!--	            	<div class="col-md-6">-->
-<!--	            		<input type="text" class="form-control" placeholder="Телефон" name="phone">-->
-<!--	            	</div>-->
-<!--	            </div>-->
-
-<!--	            <div class="form-group">-->
-<!--	              <textarea name="message" id="" cols="30" rows="3" class="form-control" placeholder="Сообщение"></textarea>-->
-<!--	            </div>-->
-<!--	            <div class="form-group">-->
-<!--	              <input type="submit" value="Записаться" class="btn btn-white btn-outline-white py-3 px-4">-->
-<!--	            </div>-->
-<!--	          </form>-->
-<!--	    		</div>    			-->
-<!--    		</div>-->
-<!--    	</div>-->
-<!--    </section>-->
-
-
-
 
 
 {% endblock %}
+
+
+<!--<section  class="ftco-section ftco-discount img" style="background-image: url({% static 'images/salon1.jpg' %});">-->
+<!--	<div  style="position:relative: margin-top:-50px;" class="my_overlay-block">-->
+<!--		<div id="myModal" class="my_overlay">-->
+
+
+<!--			<div class="modal-content">-->
+<!--				<span class="close">&times;</span>-->
+<!--				<p style="color:black">Some text in the Modalввввввввввввввввввввввввввввввввввввввffffffffffffffd..</p>-->
+<!--			</div>-->
+
+<!--		</div>-->
+<!--		<div class="container">-->
+<!--			<div class="row justify-content-end">-->
+<!--				<div class="col-md-5 discount ftco-animate">-->
+<!--					<h3>Запишись</h3>-->
+<!--					<h2 class="mb-4"></h2>-->
+<!--					<p class="mb-4"> Вам нужно хорошо подстричься, или сделать цвет лица более естественным? Кожа или ногти уже не те, что прежде? Всё поправимо! Стоит лишь обратиться к услугам профессионалов. Ведь секретом сохранения и мужской, и женской привлекательности в полной мере владеют лишь профессионалы индустрии красоты. Точно так же, как и умением показать в лучшем свете неповторимую индивидуальность личности человека..</p>-->
+<!--					<button id="myBtn">Open Modal</button>-->
+
+
+
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
+
+
+
+
 
 
 
