@@ -57,38 +57,62 @@ class BeautyIndexView(CreateView):
         return super(BeautyIndexView, self).form_valid(form)
 
 
-class BeautyAboutView(generic.TemplateView):
+class BeautyAboutView(CreateView):
     template_name = 'about.html'
+    form_class = SignInForm
+    success_url = "/about/"
+    model = SignIn
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(BeautyAboutView, self).get_context_data(**kwargs)
         context['about_list'] = Workers.objects.all()
         return context
 
+    def form_valid(self, form):
+        self.form_class(form.cleaned_data)
+        return super(BeautyAboutView, self).form_valid(form)
 
-class BeautyServiceView(generic.TemplateView):
+
+class BeautyServiceView(CreateView):
     template_name = 'services.html'
+    form_class = SignInForm
+    success_url = "/service/"
+    model = SignIn
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(BeautyServiceView, self).get_context_data(**kwargs)
         context['service'] = Services.objects.all()
         return context
 
+    def form_valid(self, form):
+        self.form_class(form.cleaned_data)
+        return super(BeautyServiceView, self).form_valid(form)
 
-class BeautyWorkView(ListView):
+
+class BeautyWorkView(CreateView, ListView):
     template_name = 'work.html'
-    paginate_by = 6
-    model = OurWork
-    context_object_name = 'works'
+    paginate_by = 1
+    model = SignIn
+    form_class = SignInForm
+    success_url = "/work/"
+    queryset = OurWork.objects.all()
+    context_object_name = "works"
+
+    def form_valid(self, form):
+        self.form_class(form.cleaned_data)
+        return super(BeautyWorkView, self).form_valid(form)
 
 
-class BeautyContactView(generic.TemplateView):
+class BeautyContactView(CreateView):
     template_name = 'contact.html'
+    form_class = SignInForm
+    model = SignIn
+    success_url = "/contact/"
+    context_object_name = 'publications'
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(BeautyContactView, self).get_context_data(**kwargs)
-        context['publications'] = Publication.objects.all()
-        return context
+    def form_valid(self, form):
+        self.form_class(form.cleaned_data)
+        return super(BeautyContactView, self).form_valid(form)
 
 
 def send_to_admin(request):
@@ -103,64 +127,4 @@ def send_to_admin(request):
                 )
             return redirect('contact-url')
         else:
-
             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-#
-#
-# def signin(request):
-#     if request.method == "POST":
-#         # sign = SignIn.objects.all()
-#         form = SignInForm(request.POST)
-#         if form.is_valid():
-#             data = form.cleaned_data
-#             print(data)
-#             instance = form.save(commit=False)
-#             instance.save()
-#             context = {'form_sing_in': form}
-#             return render(request, "index.html", context)
-#         return HttpResponse(content=f'Похоже вы неправильно заполнили форму')
-
-
-
-# def get_my_all_public(request):
-#     publications=Publication.objects.all()
-#     categories = Category.objects.all()
-#     context = {"publications":publications,"categories":categories}
-#     return render(request,'index.html',context=context)
-#
-#
-# def get_my_all(request):
-#     publications=Publication.objects.filter()
-#     context = {"publications":publications}
-#     return render(request,"blog.html",context=context)
-#
-#
-# def get_detail(request, pk):
-#     try:
-#         publication = Publication.objects.get(id=pk)
-#         context = {"publication": publication}
-#     except Publication.DoesNotExist:
-#         raise Http404
-#     return render(request,"blog-single.html",context=context)
-
-
-
-#
-# def send_signin(request):
-#     if request.method == 'POST':
-#         post_request = request.POST
-#         email_form = SignInForm(post_request)
-#         if email_form.is_valid():
-#             comment = SignIn.objects.create(
-#                 first_name=email_form.data['first_name'],
-#                 last_name=email_form.data['last_name'],
-#                 date=email_form.data['date'],
-#                 phone=email_form.data['phone'],
-#                 message=email_form.data['message']
-#                 )
-#             return HttpResponse(content='данные успешно отпрвлены.')
-#         else:
-#             return HttpResponse(content=f'Похоже вы неправильно заполнили форму: {email_form.errors}')
-#
-#
-#

@@ -15,6 +15,7 @@
               <div class="media-body">
 				  <img src="{{services.image.url}}" class="img-fluid" alt="Colorlib Template">
                 <h2 class="heading">{{ services.name }}</h2>
+				  <h5>{{services.price}} сом</h5>
               </div>
             </div>
           </div>
@@ -25,17 +26,52 @@
     </section>
 
 
-    <section class="ftco-section ftco-discount img" style="background-image: url({% static 'images/daiyr.jpg' %});">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row justify-content-end">
-					<div class="col-md-5 discount ftco-animate">
-						<h2 class="mb-4"></h2>
-						<p><a href="#" class="btn btn-white btn-outline-white px-4 py-3">Запишись</a></p>
-					</div>
+<section  class="ftco-section ftco-discount img" style="background-image: url({% static 'images/daiyr.jpg' %});">
+	<div  style="position:relative: margin-top:-50px;" class="my_overlay-block">
+		<div id="myModal" class="my_overlay">
+
+		</div>
+		<div class="container">
+			<div class="row justify-content-end">
+				<div class="col-md-5 discount ftco-animate">
+					<h3>Запишись</h3>
+					<h2 class="mb-4"></h2>
+					<p class="mb-4"> </p>
+<!--                      <button type="button" class="btn btn-warning" data-toggle="modal"data-target="#tour_modal">Запишись</button>-->
+					 <button type="button" class="btn btn-white btn-outline-white px-4 py-3" data-toggle="modal"data-target="#tour_modal">Запишись</button>
+                      <small>Нажми и запишись</small>
 				</div>
 			</div>
-		</section>
+		</div>
+	</div>
+</section>
+
+
+
+<div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Записывайся</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post">
+        <div class="modal-body">
+            {% csrf_token %}
+            {{ form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
 
 		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'images/salon1.jpg' %});">
 			<div class="overlay"></div>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
     <section class="ftco-section">
     	<div class="container">
     		<div class="row d-flex">
@@ -15,12 +16,12 @@
     	</div>
 			</div>
 <!--        {% static 'video/video2.MP4'%}-->
-    </section>
+      </section>
 
-<div class="embed-responsive embed-responsive-21by9">
+    <div class="embed-responsive embed-responsive-21by9">
     <p>xebbeibxbiecriufburibubiufcrbwuibfuiaeui</p>
-  <iframe class="embed-responsive-item" src=" {% static 'video/video2.MP4'%}"></iframe>
-</div>
+    <iframe class="embed-responsive-item" src=" {% static 'video/video2.MP4'%}"></iframe>
+   </div>
 
     <section class="ftco-section bg-light">
       <div class="container">
@@ -33,21 +34,90 @@
         <div class="row">
 
 
-			{% for workers in about_list %}
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{workers.image.url}}" alt="Card image cap">
-                 <div class="card-body">
-                  <h5><a href="{% url 'publication_detail-url' workers.id %}" class="card-title">{{workers.name}}</a></h5>
-                 <p class="card-text">{{workers.description}}</p>
-                 </div>
+            {% for workers in about_list %}
+
+             <div class="card" style="width: 18rem;">
+              <img src="{{workers.image.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+               <h5 class="card-title"><a href="{% url 'publication_detail-url' workers.id %}">{{workers.name}}</a></h5>
+                <p class="card-text">{{workers.description}}</p>
               </div>
-			{% endfor %}
+            </div>
+           {% endfor %}
+
+
 
 
         </div>
       </div>
     </section>
+
+
+<button type="button" class="btn btn-white btn-outline-white px-4 py-3" data-toggle="modal"data-target="#tour_modal">Запишись</button>
+
+
+<div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Записывайся</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post">
+        <div class="modal-body">
+            {% csrf_token %}
+            {{ form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}
+
+
+
+<!-- <section class="wrapper">-->
+<!--             <div class="container">-->
+<!--         <div class="row">-->
+<!--         <div class="col text-center mb-5">-->
+<!--         <h1 class="display-4">{{workers.name}}</h1>-->
+<!--        <p class="lead">{{workers.description}}</p>-->
+<!--        </div>-->
+<!--       </div>-->
+<!--        <div class="row">-->
+<!--      <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('/static/images/daiyr.jpg');">-->
+<!--         <img class="card-img d-none" src="{% static 'images/manikur.jpg' %}" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">-->
+<!--        <div class="card-img-overlay d-flex flex-column">-->
+<!--         <div class="card-body">-->
+<!--            <small class="card-meta mb-2">Thought Leadership</small>-->
+<!--            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>-->
+<!--           <small><i class="far fa-clock"></i> October 15, 2020</small>-->
+<!--          </div>-->
+<!--          <div class="card-footer">-->
+<!--           <div class="media">-->
+<!--      <img class="mr-3 rounded-circle" src="{{workers.image.url}}" alt="Generic placeholder image" style="max-width:50px">-->
+<!--    <div class="media-body">-->
+<!--    <h6 class="my-0 text-white d-block">Oz Coruhlu</h6>-->
+<!--     <small>Director of UI/UX</small>-->
+<!--     </div>-->
+<!--       </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--     </div>-->
+
+<!--      </div>-->
+<!--   </section>-->
+
 
 
 

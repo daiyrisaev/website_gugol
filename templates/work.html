@@ -80,6 +80,36 @@
         {% endif %}
       </ul>
     </div>
+
+
+
+
+<button type="button" class="btn btn-white btn-outline-white px-4 py-3" data-toggle="modal"data-target="#tour_modal">Запишись</button>
+
+<div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Записывайся</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post">
+        <div class="modal-body">
+            {% csrf_token %}
+            {{ form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}
 
 

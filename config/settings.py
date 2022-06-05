@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF = 'website.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES_DIR=BASE_DIR/'templates'
 
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'website.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database

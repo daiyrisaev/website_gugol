@@ -19,7 +19,7 @@ class Publication(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='publication_images',null=True)
     created_at = models.DateTimeField(auto_now=True)
-    update=models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "публикация"
@@ -70,6 +70,7 @@ class Workers(models.Model):
 class Services(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='service_images',null=True)
+    price = models.CharField("Цена",max_length=50)
 
     class Meta:
         verbose_name = "Услуга"
@@ -81,7 +82,7 @@ class Services(models.Model):
 
 class SignIn(models.Model):
     name = models.CharField("ФИО",max_length=25)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,verbose_name="Выберите услугу")
+    category = models.ForeignKey(Category, verbose_name="Выберите услугу", on_delete=models.CASCADE)
     mobile = models.CharField("Номер телефона", max_length=11)
     is_paid = models.BooleanField("оплачено", default=False)
     message = models.CharField("Пожелание \ сообщения", max_length=250)
@@ -89,7 +90,7 @@ class SignIn(models.Model):
     time = models.TimeField("Время")
 
     class Meta:
-        verbose_name = "Запис "
+        verbose_name = "Запись "
         verbose_name_plural = "Записи"
 
     def __str__(self):
