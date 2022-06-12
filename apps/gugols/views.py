@@ -18,17 +18,9 @@ class BeautyListView(generic.ListView):
     def get_queryset(self):
         query_params = self.request.GET
         search_word = query_params.get('search_words')
-        category_id = query_params.get('category_pk')
         publication_qs = Publication.objects.all()
         if search_word:
             publication_qs = publication_qs.filter(name__contains=search_word)
-        if category_id:
-            try:
-                category_id = int(category_id)
-            except ValueError:
-                pass
-            else:
-                publication_qs = publication_qs.filter(category_id=category_id)
         return publication_qs
 
 
@@ -91,7 +83,7 @@ class BeautyServiceView(CreateView):
 
 class BeautyWorkView(CreateView, ListView):
     template_name = 'work.html'
-    paginate_by = 1
+    paginate_by = 6
     model = SignIn
     form_class = SignInForm
     success_url = "/work/"
@@ -101,6 +93,14 @@ class BeautyWorkView(CreateView, ListView):
     def form_valid(self, form):
         self.form_class(form.cleaned_data)
         return super(BeautyWorkView, self).form_valid(form)
+
+    def get_queryset(self):
+        query_params = self.request.GET
+        search_word = query_params.get('search_words')
+        publication_qs = OurWork.objects.all()
+        if search_word:
+            publication_qs = publication_qs.filter(name__contains=search_word)
+        return publication_qs
 
 
 class BeautyContactView(CreateView):

@@ -1,22 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-		
-		<section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
+
+
+
+
+<section class="ftco-section">
+    <div class="col-md-4 sidebar ftco-animate">
+        <div class="sidebar-box">
+            <form  class="search-form">
+                <div class="form-group">
+                    <div class="icon">
+                        <span class="icon-search"></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Я ищу.." name="search_words">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Наши работы</h2>
             <p class="work-category">
-            	<span class="px-2"><a href="#" class="active">Все</a></span>
-            	<span class="px-2"><a href="https://www.instagram.com/p/CUR2vC3Df65/?utm_source=ig_web_copy_link">Макияж</a></span>
-            	<span class="px-2"><a href="https://www.instagram.com/p/CNugfV6D4G6/?utm_source=ig_web_copy_link">Массаж</a></span>
-            	<span class="px-2"><a href="https://www.instagram.com/p/CMjYGllDF4L/?utm_source=ig_web_copy_link">Спа</a></span>
-            	<span class="px-2"><a href="https://www.instagram.com/p/CMwJG_7DP8R/?utm_source=ig_web_copy_link">Стрижки</a></span>
-            	<span class="px-2"><a href="https://www.instagram.com/p/CNPYqx6De8j/?utm_source=ig_web_copy_link">Маникюр</a></span>
-            </p>
-          </div>
-        </div>
+          <span class="px-2"><a href="#" class="active">Все</a></span>
+          <span class="px-2"><a href="https://www.instagram.com/p/CUR2vC3Df65/?utm_source=ig_web_copy_link">Макияж</a></span>
+          <span class="px-2"><a href="https://www.instagram.com/p/CNugfV6D4G6/?utm_source=ig_web_copy_link">Массаж</a></span>
+          <span class="px-2"><a href="https://www.instagram.com/p/CMjYGllDF4L/?utm_source=ig_web_copy_link">Спа</a></span>
+          <span class="px-2"><a href="https://www.instagram.com/p/CMwJG_7DP8R/?utm_source=ig_web_copy_link">Стрижки</a></span>
+          <span class="px-2"><a href="https://www.instagram.com/p/CNPYqx6De8j/?utm_source=ig_web_copy_link">Маникюр</a></span>
+        </p>
+    </div>
+  </div>
+
+
+
         <div class="row">
 			{% for work in works %}
             	<div class="col-md-4 ftco-animate">
@@ -35,7 +55,7 @@
 			{% endfor %}
     	      </div>
 			</div>
-    </section>
+
 
 
 
