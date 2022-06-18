@@ -18,6 +18,12 @@
 <!--        {% static 'video/video2.MP4'%}-->
       </section>
 
+
+
+<!--<div class="embed-responsive embed-responsive-16by9">-->
+<!--  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OzmeZBQv4pQ" allowfullscreen></iframe>-->
+<!--</div>-->
+
     <div class="embed-responsive embed-responsive-21by9">
     <p>xebbeibxbiecriufburibubiufcrbwuibfuiaeui</p>
     <iframe class="embed-responsive-item" src=" {% static 'video/video2.MP4'%}"></iframe>
@@ -32,22 +38,19 @@
           </div>
         </div>
         <div class="row">
-
-
             {% for workers in about_list %}
 
-             <div class="card" style="width: 18rem;">
-              <img src="{{workers.image.url}}" class="card-img-top" alt="...">
+
+                <div class="card" style="width:400px">
+              <img class="card-img-top" src="{{workers.image.url}}" alt="Card image">
               <div class="card-body">
-               <h5 class="card-title"><a href="{% url 'publication_detail-url' workers.id %}">{{workers.name}}</a></h5>
+                <h4 class="card-title">{{workers.name}}</h4>
                 <p class="card-text">{{workers.description}}</p>
               </div>
             </div>
+
+
            {% endfor %}
-
-
-
-
         </div>
       </div>
     </section>
@@ -78,6 +81,8 @@
       </div>
     </div>
   </div>
+
+
 
 
 {% endblock %}

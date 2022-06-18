@@ -83,7 +83,7 @@ class BeautyServiceView(CreateView):
 
 class BeautyWorkView(CreateView, ListView):
     template_name = 'work.html'
-    paginate_by = 6
+    paginate_by = 9
     model = SignIn
     form_class = SignInForm
     success_url = "/work/"
