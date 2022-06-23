@@ -164,7 +164,20 @@
         <form method="post">
         <div class="modal-body">
             {% csrf_token %}
-            {{ form.as_p}}
+			<label for="id_category">Выберите услугу: </label>
+			{{form.category}}
+			{{form.name.label}}
+			{{form.name}}
+			{{form.mobile.label}}
+			{{form.mobile}}
+			{{form.message.label}}
+			{{form.message}}
+			{{form.date.label}}
+			{{form.date}}
+			{{form.time.label}}
+			{{form.time}}
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>

@@ -9,7 +9,7 @@ class Category(models.Model):
         (MALE, 'МУЖ'),
         (FEMALE, 'ЖЕН')
     ]
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name='Выберите услугу')
 
     gender = models.CharField(max_length=1, choices=GENDERS, default=MALE)
 
@@ -90,7 +90,7 @@ class Services(models.Model):
 
 class SignIn(models.Model):
     name = models.CharField("ФИО",max_length=25)
-    category = models.ForeignKey(verbose_name="Выберите услугу",  to=Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, verbose_name="Выберите услугу")
     mobile = models.CharField("Номер телефона", max_length=11)
     is_paid = models.BooleanField("оплачено", default=False)
     message = models.CharField("Пожелание \ сообщения", max_length=250)
@@ -103,4 +103,5 @@ class SignIn(models.Model):
 
     def __str__(self):
         return self.name
+
 

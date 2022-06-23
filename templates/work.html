@@ -39,6 +39,7 @@
 
         <div class="row">
 			{% for work in works %}
+
             	<div class="col-md-4 ftco-animate">
         		<a href="#" class="work-entry">
         			<img src="{{work.image.url}}" class="img-fluid" alt="Colorlib Template">
@@ -52,6 +53,7 @@
         			</div>
         		</a>
         	</div>
+
 			{% endfor %}
     	      </div>
 			</div>
@@ -106,6 +108,7 @@
 
 <button type="button" class="btn btn-white btn-outline-white px-4 py-3" data-toggle="modal"data-target="#tour_modal">Запишись</button>
 
+
 <div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -118,7 +121,20 @@
         <form method="post">
         <div class="modal-body">
             {% csrf_token %}
-            {{ form.as_p}}
+			<label for="id_category">Выберите услугу: </label>
+			{{form.category}}
+			{{form.name.label}}
+			{{form.name}}
+			{{form.mobile.label}}
+			{{form.mobile}}
+			{{form.message.label}}
+			{{form.message}}
+			{{form.date.label}}
+			{{form.date}}
+			{{form.time.label}}
+			{{form.time}}
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>

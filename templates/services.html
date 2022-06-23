@@ -48,6 +48,7 @@
 
 
 
+
 <div class="modal fade" id="tour_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -60,7 +61,20 @@
         <form method="post">
         <div class="modal-body">
             {% csrf_token %}
-            {{ form.as_p}}
+			<label for="id_category">Выберите услугу: </label>
+			{{form.category}}
+			{{form.name.label}}
+			{{form.name}}
+			{{form.mobile.label}}
+			{{form.mobile}}
+			{{form.message.label}}
+			{{form.message}}
+			{{form.date.label}}
+			{{form.date}}
+			{{form.time.label}}
+			{{form.time}}
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -70,9 +84,6 @@
       </div>
     </div>
   </div>
-
-
-
 		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'images/salon1.jpg' %});">
 			<div class="overlay"></div>
       <div class="container">

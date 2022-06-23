@@ -26,7 +26,7 @@ class BeautyListView(generic.ListView):
 
 class BeautyDetailView(generic.DetailView):
     template_name = 'blog-single.html'
-    context_object_name = 'about_list'
+    context_object_name = 'works'
     model = Workers
     slug_field = 'id'
     slug_url_kwarg = 'pub_pk'
